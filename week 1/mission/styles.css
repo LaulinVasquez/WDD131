@@ -1,0 +1,54 @@
+
+body, html {
+    font-family: "Times New Roman",Arial, sans-serif;
+    font-size: 20px;
+    line-height: 1.2;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+
+.content {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px;
+    border: rgb(26, 24, 24) solid 1px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 150px;
+    padding-right: 150px;
+}
+header{
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #006EB6;
+}
+main > p{
+    padding-top: 30px;
+}
+p {
+    text-align: left;
+}
+
+ol {
+    text-align: left;
+    margin-bottom: 30px; 
+}
+.logo {
+    margin-top: 20px;
+    max-width: 150px;
+}
