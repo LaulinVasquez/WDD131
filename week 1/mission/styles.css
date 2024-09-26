@@ -1,5 +1,6 @@
 
 body, html {
+    
     font-family: "Times New Roman",Arial, sans-serif;
     font-size: 20px;
     line-height: 1.2;
@@ -51,4 +52,11 @@ ol {
 .logo {
     margin-top: 20px;
     max-width: 150px;
+}
+.dark h2{
+    color: #4F9ACF;
+}
+.dark{
+    background-color: #333;
+    color: white;
 }
