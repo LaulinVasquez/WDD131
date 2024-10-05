@@ -1,0 +1,34 @@
+header,
+main,
+footer {
+  max-width: 640px;
+  margin: 1rem auto;
+  border: dotted white;
+  padding: 2%;
+  background-color: rgb(3, 89, 118);
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1;
+  gap: 1rem;
+}
+
+section {
+  padding: 5%;
+  background-color: white;
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    background-color: lightblue;
+  }
+  header {
+    background-color: black;
+    color: white;
+  }
+  main {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+}
