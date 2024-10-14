@@ -87,12 +87,13 @@ main {
 }
 .viewer > button{
   width: 50px;
-  grid-row: 1,2;
+  grid-row: 1,1;
 }
 .viewer , img{
-  grid-row: 2,3;
+  grid-row: 2,2;
   justify-content: center;
   align-items: center;
+  max-height: 100%;
 }
 
 @media screen and (min-width: 700px) {
@@ -117,11 +118,18 @@ main {
     grid-template-columns: repeat(3, 1fr);
   }
   #nav-links {
-    display: block; /* Always show navigation */
+    display: block; 
     justify-content: center;
     align-items: center;
   }
-
+  .viewer {
+    padding: 100px; 
+  }
+  
+  .viewer img {
+    max-width: 80vw; 
+    max-height: 80vh; 
+  }
   #menu-btn {
     display: none; /* Hide the button */
   }
