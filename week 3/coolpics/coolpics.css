@@ -36,16 +36,22 @@ footer {
   align-content: center;
   text-align: center;
   font-size: 1em;
-  padding-bottom: 20px;
+  padding-bottom: 5px;
 }
 button{
-    font-size: 1em;
-    background-color: rgb(68, 62, 73);
-    width: 30%;
-    color: white;
+  font-size: 1em;
+  background-color: transparent;
+  color: white;
+}
+#nav-links {
+  display: none;
+}
+
+#nav-links.show {
+  display: block;
 }
 h1,
-h3 {
+h2 {
   font-family: "Mooli";
   text-align: center;
 }
@@ -69,6 +75,26 @@ main {
 .container {
   display: grid;
 }
+.viewer{
+  display: grid;
+  grid-template-rows: (2, 1fr);
+  position: fixed;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+.viewer > button{
+  width: 50px;
+  grid-row: 1,2;
+}
+.viewer , img{
+  grid-row: 2,3;
+  justify-content: center;
+  align-items: center;
+}
+
 @media screen and (min-width: 700px) {
   .container {
     grid-template-columns: repeat(2, 1fr);
@@ -96,7 +122,7 @@ main {
     align-items: center;
   }
 
-  button {
+  #menu-btn {
     display: none; /* Hide the button */
   }
   nav ul {
