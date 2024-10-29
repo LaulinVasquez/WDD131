@@ -39,24 +39,43 @@ nav {
   display: grid;
   grid-column: repeat(2, 1fr);
   padding: 10px;
-  grid-row-gap: 5%;
+  grid-row-gap: 1%;
+  margin: 3%;
 }
 section {
   grid-column: 1/2;
   display: grid;
   grid-column: repeat(2, 1fr);
-  gap: 10%;
+  gap: 1%;
 }
 .filter {
   grid-column: 2/3;
-  grid-row: 1/2;
+  grid-row: 1/4;
   margin: 5%;
+  width: 250px;
+  border: solid 1px #efc69b;
 }
 article {
   grid-column: 2/2;
-  margin: 10px;
+  margin: 5px;
+  width: 50%;
 }
 .book-info {
-  line-height: 2.5;
+  line-height: 2;
   width: 150px;
+  text-align: right;
+  border-right: #efc69b solid 2px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.date {
+  font-size: 1rem;
+}
+article > h2 {
+  margin-top: -10px;
+  text-align: left;
+}
+.container {
+  text-align: center;
+  padding: 5%;
 }
