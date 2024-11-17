@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+header{
+    display: flex;
+    padding: 15px;
+    flex-wrap: wrap;
+}
+h1,
+h2 {
+  font-family: Oswald, "Helvatica", "sans-serif";
+}
+.title-container{
+    display: flex;
+    padding: 10px;
+    align-items: center;
+}
+img {
+  max-width: 100%;
+}
+.search-bar{
+   display: flex;
+   padding: 10px;
+   max-width: 300px;
+}
+input{
+    width: 250px;
+}
+button{
+    padding: 5px;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 5%;
+    margin: 5%;
+}
+.tag {
+  border: solid 1px;
+  max-width: 50px;
+  background-color: #FAFAFA;
+  text-align: center;
+  padding: 5px;
+}
