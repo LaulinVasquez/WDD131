@@ -1,47 +1,162 @@
+/* Reset margins and padding */
 * {
   margin: 0;
   padding: 0;
 }
-header{
-    display: flex;
-    padding: 15px;
-    flex-wrap: wrap;
+
+/* Header styles */
+header {
+  display: flex;
+  padding: 15px;
+  flex-wrap: wrap;
 }
-h1,
-h2 {
-  font-family: Oswald, "Helvatica", "sans-serif";
+
+/* Title styling */
+h1, h2 {
+  font-family: Oswald, Helvetica, sans-serif;
 }
-.title-container{
-    display: flex;
-    padding: 10px;
-    align-items: center;
+
+/* Title container */
+.title-container {
+  display: flex;
+  padding: 10px;
+  margin: 5px;
 }
+
+.title-container > h1 {
+  margin-top: 30px;
+}
+
+/* Image styling */
 img {
   max-width: 100%;
 }
-.search-bar{
-   display: flex;
-   padding: 10px;
-   max-width: 300px;
+
+/* Search bar */
+.search-bar {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  overflow: hidden;
+  width: 300px;
 }
-input{
-    width: 250px;
+
+input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 8px 12px;
+  font-size: 16px;
 }
-button{
-    padding: 5px;
+
+button {
+  cursor: pointer;
+  padding: 8px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.container{
-    display: flex;
-    flex-direction: column;
-    border: 1px solid;
-    border-radius: 5px;
-    padding: 5%;
-    margin: 5%;
+
+/* Container styling */
+.container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 5%;
+  margin: 5%;
 }
+
+/* Tag styling */
 .tag {
-  border: solid 1px;
+  border: 1px solid;
   max-width: 50px;
-  background-color: #FAFAFA;
+  height: 20px;
+  background-color: #fafafa;
   text-align: center;
   padding: 5px;
+}
+
+/* Description (hidden by default) */
+.description {
+  display: none;
+}
+
+/* Footer styles */
+footer {
+  padding-top: 50px;
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+/* Anchor links */
+a {
+  text-decoration: none;
+  color: #59c3c3;
+}
+
+a:hover {
+  color: #333;
+}
+
+/* Responsive Design */
+@media screen and (min-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .title-container {
+    align-items: center;
+    gap: 10px;
+  }
+
+  .search-bar {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .container {
+    flex-direction: row;
+  }
+
+  .recipe-section > img {
+    width: 300px;
+  }
+
+  .recipe-section {
+    display: flex;
+  }
+
+  .template-content {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    gap: 15px;
+  }
+
+  .description {
+    display: block; 
+  }
+
+  footer {
+    justify-content: space-between; 
+    align-items: center; 
+    flex-wrap: wrap; 
+    padding: 20px; 
+  }
+
+  .social {
+    display: flex;
+    gap: 15px; 
+  }
+
+  footer a {
+    text-align: left; 
+  }
 }

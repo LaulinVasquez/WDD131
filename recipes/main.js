@@ -1,9 +1,19 @@
 import recipes from "./recipes.mjs";
 
-const rec = recipes[0]
+const rec = recipes[1];
 const template = `
     <img src="${rec.image}" al="${rec.name}">
-    <p class="tag">${rec.tags[0]}</p>
-    <h2>${rec.name}</h2>
-`
+    <div class="template-content">
+        <p class="tag">${rec.tags[0]}</p>
+        <h2>${rec.name}</h2>
+        <span id="rating" role="img" aria-label="Rating: 4 out of 5 stars">
+        <span aria-hidden="true" class="icon-star">⭐</span>
+        <span aria-hidden="true" class="icon-star">⭐</span>
+        <span aria-hidden="true" class="icon-star">⭐</span>
+        <span aria-hidden="true" class="icon-star-empty">⭐</span>
+        <span aria-hidden="true" class="icon-star-empty">☆</span>
+        </span>
+        <p class="description">${rec.description}<p>
+    </div>
+`;
 document.querySelector(".recipe-section").innerHTML = template;

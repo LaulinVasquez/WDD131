@@ -3,51 +3,66 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      property="og:title"
+      content="Recipe Book - Discover Your Next Favorite Dish"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:description"
+      content="Explore a variety of recipes tailored to your taste. From desserts to main courses, Recipe Book has it all!"
+    />
+    <meta
+      property="og:image"
+      content="https://example.com/images/recipe-book-preview.jpg"
+    />
+    <meta property="og:url" content="https://example.com" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Recipe Book - Discover Your Next Favorite Dish"
+    />
+    <meta
+      name="twitter:description"
+      content="Discover and share amazing recipes. Perfect for food enthusiasts and chefs!"
+    />
+    <meta
+      name="twitter:image"
+      content="https://example.com/images/recipe-book-preview.jpg"
+    />
     <link rel="stylesheet" href="recipes.css" />
     <link rel="icon" href="images/recipe-book.png" type="image/png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:wght@100..900&display=swap"
       rel="stylesheet"
     />
-    <script src="main.js" type="module"></script>
+    <script src="main.js" type="module" defer></script>
     <title>Recipe Book</title>
   </head>
   <body>
     <header>
-        <div class="title-container">
-        <img
-          src="images/recipe-book.png"
-          alt="recipe_logo"
-          style="width: 50px"
-        />
-        </div>
-      <h1>RECIPEBOOK</h1>
+      <div class="title-container">
+        <img src="images/recipe-book.png" alt="Recipe logo" width="70" />
+        <h1>RecipeBook</h1>
+      </div>
       <div class="search-bar">
         <input type="text" placeholder="Find a recipe" />
-        <button type="submit">
+        <button type="submit" aria-label="Search">
           <svg
-            fill="#000000"
+            fill="#000"
             height="20px"
             width="20px"
-            version="1.1"
-            id="Capa_1"
             xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
             viewBox="0 0 488.4 488.4"
-            xml:space="preserve"
           >
-            <g>
-              <g>
-                <path
-                  d="M0,203.25c0,112.1,91.2,203.2,203.2,203.2c51.6,0,98.8-19.4,134.7-51.2l129.5,129.5c2.4,2.4,5.5,3.6,8.7,3.6
-                   s6.3-1.2,8.7-3.6c4.8-4.8,4.8-12.5,0-17.3l-129.6-129.5c31.8-35.9,51.2-83,51.2-134.7c0-112.1-91.2-203.2-203.2-203.2
-                   S0,91.15,0,203.25z M381.9,203.25c0,98.5-80.2,178.7-178.7,178.7s-178.7-80.2-178.7-178.7s80.2-178.7,178.7-178.7
-                   S381.9,104.65,381.9,203.25z"
-                />
-              </g>
-            </g>
+            <path
+              d="M0,203.25c0,112.1,91.2,203.2,203.2,203.2c51.6,0,98.8-19.4,134.7-51.2l129.5,129.5c2.4,2.4,5.5,3.6,8.7,3.6
+              s6.3-1.2,8.7-3.6c4.8-4.8,4.8-12.5,0-17.3l-129.6-129.5c31.8-35.9,51.2-83,51.2-134.7c0-112.1-91.2-203.2-203.2-203.2
+              S0,91.15,0,203.25z M381.9,203.25c0,98.5-80.2,178.7-178.7,178.7s-178.7-80.2-178.7-178.7s80.2-178.7,178.7-178.7
+              S381.9,104.65,381.9,203.25z"
+            />
           </svg>
         </button>
       </div>
@@ -56,38 +71,21 @@
     <main>
       <section class="container">
         <div class="recipe-section"></div>
-        <span id="rating" role="img" aria-label="Rating: 4 out of 5 stars">
-          <span aria-hidden="true" class="icon-star">⭐</span>
-          <span aria-hidden="true" class="icon-star">⭐</span>
-          <span aria-hidden="true" class="icon-star">⭐</span>
-          <span aria-hidden="true" class="icon-star-empty">⭐</span>
-          <span aria-hidden="true" class="icon-star-empty">☆</span>
-        </span>
       </section>
     </main>
     <footer>
       <div class="social">
-        <!-- Social media icons provided under CC from https://www.iconfinder.com/AlfredoCreates  -->
         <a href="#"
-          ><img
-            src="images/instagram_icon.svg"
-            alt="instagram icon"
-            style="width: 50px"
+          ><img src="images/instagram_icon.svg" alt="Instagram" width="50"
         /></a>
         <a href="#"
-          ><img
-            src="images/youtube_icon.svg"
-            alt="youtube icon"
-            style="width: 50px"
+          ><img src="images/youtube_icon.svg" alt="YouTube" width="50"
         /></a>
         <a href="#"
-          ><img
-            src="images/pinterest_icon.svg"
-            alt="pinterest icon"
-            style="width: 50px"
+          ><img src="images/pinterest_icon.svg" alt="Pinterest" width="50"
         /></a>
       </div>
-      <a href="https://www.flaticon.com/free-icons/recipe" title="recipe icons"
+      <a href="https://www.flaticon.com/free-icons/recipe" title="Recipe icons"
         >Recipe icons created by Freepik - Flaticon</a
       >
     </footer>
