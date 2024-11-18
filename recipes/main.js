@@ -2,7 +2,7 @@ import recipes from "./recipes.mjs";
 
 const rec = recipes[1];
 const template = `
-    <img src="${rec.image}" al="${rec.name}">
+    <img src="${rec.image}" alt="${rec.name}">
     <div class="template-content">
         <p class="tag">${rec.tags[0]}</p>
         <h2>${rec.name}</h2>

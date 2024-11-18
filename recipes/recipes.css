@@ -96,11 +96,11 @@ footer {
 /* Anchor links */
 a {
   text-decoration: none;
-  color: #59c3c3;
+  color: #333;
 }
 
 a:hover {
-  color: #333;
+  color: #59c3c3;
 }
 
 /* Responsive Design */
