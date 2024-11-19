@@ -1,6 +1,8 @@
 import recipes from "./recipes.mjs";
 
-const rec = recipes[1];
+// const random_num = Math.floor(Math.random() * 8);
+
+const rec = recipes[6];
 const template = `
     <img src="${rec.image}" alt="${rec.name}">
     <div class="template-content">

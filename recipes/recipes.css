@@ -67,16 +67,18 @@ button {
   border-radius: 5px;
   padding: 5%;
   margin: 5%;
+
 }
 
 /* Tag styling */
 .tag {
   border: 1px solid;
-  max-width: 50px;
+  max-width: 60px;
   height: 20px;
   background-color: #fafafa;
   text-align: center;
   padding: 5px;
+  font-size: large;
 }
 
 /* Description (hidden by default) */
@@ -115,7 +117,6 @@ a:hover {
     align-items: center;
     gap: 10px;
   }
-
   .search-bar {
     width: 100%;
     max-width: 100%;
@@ -123,10 +124,11 @@ a:hover {
 
   .container {
     flex-direction: row;
+    padding: 2%;
   }
 
   .recipe-section > img {
-    width: 300px;
+    width: 450px;
   }
 
   .recipe-section {
@@ -136,8 +138,8 @@ a:hover {
   .template-content {
     display: flex;
     flex-direction: column;
-    padding: 5px;
-    gap: 15px;
+    padding-left: 15px;
+    gap: 20px;
   }
 
   .description {
