@@ -67,13 +67,13 @@ button {
   border-radius: 5px;
   padding: 5%;
   margin: 5%;
-
+  gap: 10px;
 }
 
 /* Tag styling */
 .tag {
   border: 1px solid;
-  max-width: 60px;
+  max-width: 80px;
   height: 20px;
   background-color: #fafafa;
   text-align: center;
@@ -124,7 +124,8 @@ a:hover {
 
   .container {
     flex-direction: row;
-    padding: 2%;
+    padding: 1%;
+    
   }
 
   .recipe-section > img {
@@ -133,6 +134,7 @@ a:hover {
 
   .recipe-section {
     display: flex;
+    margin: 10px;
   }
 
   .template-content {
