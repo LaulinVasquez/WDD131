@@ -24,20 +24,19 @@ function tagsTemplate(tags) {
   return html;
 }
 
-
 function ratingTemplate(rating) {
   let html = `<span class="rating" role="img" aria-label="Rating: ${rating} out of 5 stars">`;
 
   for (let i = 1; i <= 5; i++) {
-    html += i <= rating
-      ? `<span aria-hidden="true" class="icon-star">⭐</span>`
-      : `<span aria-hidden="true" class="icon-star-empty">☆</span>`;
+    html +=
+      i <= rating
+        ? `<span aria-hidden="true" class="icon-star">⭐</span>`
+        : `<span aria-hidden="true" class="icon-star-empty">☆</span>`;
   }
 
   html += `</span>`;
   return html;
 }
-
 
 function renderRecipes(recipeList) {
   const recipeSection = document.querySelector(".recipe-section");
@@ -45,15 +44,11 @@ function renderRecipes(recipeList) {
   recipeSection.innerHTML = recipesHTML;
 }
 
-
 function filter(query) {
-  const filtered = recipes.filter((recipe) =>
-    filterFunction(recipe, query)
-  );
+  const filtered = recipes.filter((recipe) => filterFunction(recipe, query));
   const sorted = filtered.sort(sortFunction);
   return sorted;
 }
-
 
 function filterFunction(recipe, query) {
   return (
@@ -62,11 +57,9 @@ function filterFunction(recipe, query) {
   );
 }
 
-
 function sortFunction(a, b) {
   return a.name.localeCompare(b.name);
 }
-
 
 function searchHandler(e) {
   e.preventDefault();
@@ -87,7 +80,6 @@ function setupSearch() {
   // Listen for button click
   searchButton.addEventListener("click", searchHandler);
 
-
   searchInput.addEventListener("keypress", (e) => {
     if (e.key === "Enter") {
       searchHandler(e);
@@ -95,11 +87,10 @@ function setupSearch() {
   });
 }
 
-
 function init() {
   const randomRecipe = getRandomListEntry(recipes);
   renderRecipes([randomRecipe]);
-  setupSearch(); 
+  setupSearch();
 }
 
 init();
