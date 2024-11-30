@@ -136,9 +136,8 @@ a:hover {
     display: flex;
     margin: 10px;
   }
-
   .template-content {
-    display: flex;
+    display: flex;;
     flex-direction: column;
     padding-left: 15px;
     gap: 20px;
