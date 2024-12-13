@@ -1,14 +1,14 @@
 /* if you are using any Google fonts change the font names below to your fonts. 
 Any spaces in your font name should be replaced with a +. 
 Fonts are separated by a | */
-@import url('https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Oswald:wght@200..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Oswald:wght@200..700&display=swap");
 
 :root {
   /* change the values below to your colors from your palette */
-  --primary-color: #0A2239;
+  --primary-color: #0a2239;
   --secondary-color: #176087;
   --accent1-color: white;
-  --accent2-color: #53A2BE;
+  --accent2-color: #53a2be;
 
   /* change the values below to your chosen font(s) */
   --heading-font: "Jaro";
@@ -33,7 +33,6 @@ Fonts are separated by a | */
 /*  Look around below...but DON'T CHANGE ANYTHING! */
 
 body {
-  
   margin: 0 auto;
   font-size: 18px;
 }
@@ -180,7 +179,7 @@ nav a:hover {
   border-right: 1px solid;
 }
 
-.logo-nba{
+.logo-nba {
   border-radius: 100%;
   height: 100px;
 }
@@ -189,27 +188,27 @@ nav a:hover {
   flex-wrap: wrap;
   gap: 2px;
 }
-footer{
+footer {
   display: flex;
   flex-direction: column;
-  background-color: var(--nav-background-color)
+  background-color: var(--nav-background-color);
 }
 /* Home page */
-.content > h1{
+.content > h1 {
   text-align: center;
 }
-.hero-container > img{
+.hero-container > img {
   width: 100%;
 }
 
-.section-container{
+.section-container {
   display: grid;
   grid-template-rows: repeat(2, 1fr);
 }
-.img-container > img{
+.img-container > img {
   width: 80%;
 }
-#section1{
+#section1 {
   grid-row: 1/2;
   display: flex;
   flex-direction: column;
@@ -221,105 +220,137 @@ footer{
 }
 
 .search-bar input {
-  padding: 5px; 
+  padding: 5px;
   border: 1px solid #ccc; /* Add border */
   border-radius: 5px;
 }
 
 .search-bar button {
-  background: none; 
-  border: none; 
+  background: none;
+  border: none;
   cursor: pointer;
 }
 nav {
   display: flex;
-  flex-wrap: wrap;  
-  align-items: center; 
+  flex-wrap: wrap;
+  align-items: center;
   gap: 10px;
 }
 nav a {
-  text-decoration: none; 
-  font-size: 18px; 
-  margin: 0 15px; 
+  text-decoration: none;
+  font-size: 18px;
+  margin: 0 15px;
 }
-#section2{
+#section2 {
   grid-row: 2/3;
   display: flex;
   flex-direction: column;
 }
 
 /* CSS for  dark mode */
-.dark h2{
+.dark h2 {
   color: white;
 }
-.dark h1{
+.dark h1 {
   color: white;
 }
-.dark{
+.dark {
   background-color: var(--primary-color);
   color: white;
 }
-.dark  nav{
+.dark nav {
   background-color: #000000;
   color: white;
 }
-
-.dark  footer{
+.dark button{
+  
+}
+.dark footer {
   background-color: #000000;
 }
-.dark  nav > a{
+.dark nav > a {
   color: white;
 }
-.dark  footer  p{
+.dark footer p {
   color: rgb(255, 255, 255);
 }
+/* Stats page */
+article {
+  margin: 15px;
+  padding: 20px;
+  background-color: rgb(240, 241, 241);
+}
+article:hover {
+  background-color: #999;
+  color: var(--accent1-color);
+}
+.team-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+.dark article {
+  background-color: var(--secondary-color);
+}
+.dark article:hover {
+  background-color: var(--accent2-color);
+  color: white;
+}
+#teams {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.details {
+  text-align: center;
+}
+
 @media (width >= 500px) {
   nav {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
   }
-  section > p{
+  section > p {
     width: 100%;
   }
-  .section-container{
+  .section-container {
     width: 100%;
     padding: 1%;
     justify-content: center;
     align-items: center;
   }
-  #section1{
+  #section1 {
     flex-direction: row;
     gap: 1em;
   }
-  #section2{
+  #section2 {
     flex-direction: row-reverse;
     gap: 1em;
   }
-  .img-container > img{
+  .img-container > img {
     width: 100%;
   }
   footer {
-    flex-direction: row; 
+    flex-direction: row;
     justify-content: space-between;
-    align-items: center; 
-    padding: 10px; 
+    align-items: center;
+    padding: 10px;
   }
-  
+
   .logo-nba {
-    height: 90px; 
-    margin-left: 10px; 
+    height: 90px;
+    margin-left: 10px;
   }
-  
+
   .social-media {
-    display: flex; 
-    gap: 15px; 
+    display: flex;
+    gap: 15px;
   }
-  
+
   .social-media a {
-    text-align: center; 
-    text-decoration: none; 
+    text-align: center;
+    text-decoration: none;
   }
-  
-  
+  #teams {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
