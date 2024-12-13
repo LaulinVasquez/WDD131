@@ -263,11 +263,15 @@ nav a {
   color: white;
 }
 .dark button{
-  
+  filter: invert(1);
+}
+.dark #github{
+  filter: invert(1);
 }
 .dark footer {
   background-color: #000000;
 }
+
 .dark nav > a {
   color: white;
 }

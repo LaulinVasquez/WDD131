@@ -7,17 +7,24 @@ function changeTheme() {
   if (themeSelector.value === "dark") {
     document.body.classList.add("dark");
 
-    document.querySelector(".logo-nba").src = "../images/NBA-stats-dark.png";
+    document.querySelectorAll(".logo-nba").forEach((logo)=> {
+      logo.src ="../images/NBA-stats-dark.png";
+    });
   } else {
     document.body.classList.remove("dark");
 
-    document.querySelector(".logo-nba").src = "../images/NBA-stats.png";
+    document.querySelectorAll(".logo-nba").forEach((logo)=> {
+      logo.src = "../images/NBA-stats.png"
+    })
   }
 }
 
 // add an event listener to the themeSelector element here.
 // Use the changeTheme function as the event handler function.
 themeSelector.addEventListener("change", changeTheme);
+
+
+
 
 // API connection and format
 
@@ -26,9 +33,10 @@ function output(teamList) {
   const html = teamList.map(
     (team) =>
       `<article>
-        <h2>${team.id}</h2><hr>
+        <h2>${team.id}</h2>
+        <hr>
         <h2>${team.name}</h2>
-        <a href="https://www.nba.com/${team.nickname}/stats">
+        <a href="https://www.nba.com/${team.nickname}">
             <img src="${team.logo}" alt="${team.name}" style="height: 30%; width: 30%">
         </a>
         <div class="details">
@@ -62,7 +70,7 @@ async function getTeams(url) {
     console.log(r);
     //Here the code will iterate trough each Json object to confirm if there are or not certified nba teams
     r.forEach((nba) => {
-      if (nba.nbaFranchise === true) {
+      if (nba.nbaFranchise === true && nba.logo != null) {
         teamList.push(nba);
         output(teamList);
       }
