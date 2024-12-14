@@ -7,24 +7,21 @@ function changeTheme() {
   if (themeSelector.value === "dark") {
     document.body.classList.add("dark");
 
-    document.querySelectorAll(".logo-nba").forEach((logo)=> {
-      logo.src ="../images/NBA-stats-dark.png";
+    document.querySelectorAll(".logo-nba").forEach((logo) => {
+      logo.src = "../images/NBA-stats-dark.png";
     });
   } else {
     document.body.classList.remove("dark");
 
-    document.querySelectorAll(".logo-nba").forEach((logo)=> {
-      logo.src = "../images/NBA-stats.png"
-    })
+    document.querySelectorAll(".logo-nba").forEach((logo) => {
+      logo.src = "../images/NBA-stats.png";
+    });
   }
 }
 
 // add an event listener to the themeSelector element here.
 // Use the changeTheme function as the event handler function.
 themeSelector.addEventListener("change", changeTheme);
-
-
-
 
 // API connection and format
 
@@ -62,10 +59,10 @@ const options = {
 
 async function getTeams(url) {
   let response = await fetch(url, options);
-  console.log(response);
 
   if (response.ok) {
     response = await response.json();
+    console.log(response);
     const r = response.response;
     console.log(r);
     //Here the code will iterate trough each Json object to confirm if there are or not certified nba teams
@@ -85,3 +82,35 @@ function reset() {
 
   articleElements.removeChild(articleElements.firstElementChild);
 }
+
+// Reference to the search bar and search button
+const searchInput = document.querySelector(".search-bar input");
+const searchButton = document.querySelector(".search-bar button");
+
+// Function to filter and display teams based on search input
+function searchTeams() {
+  const query = searchInput.value.toLowerCase(); // Get user input and convert to lowercase for case-insensitive search
+  const filteredTeams = teamList.filter(
+    (team) =>
+      team.name.toLowerCase().includes(query) || // Match team name
+      team.code.toLowerCase().includes(query) // Match team code
+  );
+
+  // Display the filtered teams
+  output(filteredTeams);
+
+  // Display a message if no teams match the search
+  if (filteredTeams.length === 0) {
+    document.getElementById("teams").innerHTML = "<p>No teams found.</p>";
+  }
+}
+
+// Event listener for the search button
+searchButton.addEventListener("click", searchTeams);
+
+// Optional: Add an event listener to trigger search when the user presses Enter in the search bar
+searchInput.addEventListener("keypress", (event) => {
+  if (event.key === "Enter") {
+    searchTeams();
+  }
+});
