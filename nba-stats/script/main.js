@@ -1,116 +1,76 @@
-const themeSelector = document.querySelector("#Theme"); // replace with code to select dropdown element out of the HTML (Hint: document.querySelector)
-function changeTheme() {
-  // check to see what the current value of our select is.
-  // The current value is conveniently found in themeSelector.value!
 
-  // if the value is dark then:
+import { getTeams, output, searchTeams } from "./nba-api.js";
+
+// Display the current date
+const date = new Date();
+const day = date.getDate();
+const month = date.getMonth() + 1;
+const year = date.getFullYear();
+document.getElementById("date").innerHTML = `${day}-${month}-${year}`;
+
+// Fetch and display NBA teams
+(async function fetchAndDisplayTeams() {
+  const teams = await getTeams();
+  output(teams);
+})();
+
+// Carousel functionality
+const buttons = document.querySelectorAll("[data-carousel-button]");
+buttons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const offset = button.dataset.carouselButton === "next" ? 1 : -1;
+    const slides = button
+      .closest("[data-carousel]")
+      .querySelector("[data-slides]");
+
+    const activeSlide = slides.querySelector("[data-active]");
+    let newIndex = [...slides.children].indexOf(activeSlide) + offset;
+
+    if (newIndex < 0) newIndex = slides.children.length - 1;
+    if (newIndex >= slides.children.length) newIndex = 0;
+
+    slides.children[newIndex].dataset.active = true;
+    delete activeSlide.dataset.active;
+  });
+});
+
+// Theme selector
+const themeSelector = document.querySelector("#Theme");
+themeSelector.addEventListener("change", () => {
   if (themeSelector.value === "dark") {
     document.body.classList.add("dark");
-
     document.querySelectorAll(".logo-nba").forEach((logo) => {
       logo.src = "../images/NBA-stats-dark.png";
     });
   } else {
     document.body.classList.remove("dark");
-
     document.querySelectorAll(".logo-nba").forEach((logo) => {
       logo.src = "../images/NBA-stats.png";
     });
   }
-}
+});
 
-// add an event listener to the themeSelector element here.
-// Use the changeTheme function as the event handler function.
-themeSelector.addEventListener("change", changeTheme);
-
-// API connection and format
-
-let teamList = [];
-function output(teamList) {
-  const html = teamList.map(
-    (team) =>
-      `<article>
-        <h2>${team.id}</h2>
-        <hr>
-        <h2>${team.name}</h2>
-        <a href="https://www.nba.com/${team.nickname}">
-            <img src="${team.logo}" alt="${team.name}" style="height: 30%; width: 30%">
-        </a>
-        <div class="details">
-            <h4>${team.nickname}</h4>
-            <p>Code: ${team.code}</p>
-            <h3>City: ${team.city}</h3>
-        </div>
-    </article>`
-  );
-  document.getElementById("teams").innerHTML = html.join(" ");
-}
-
-//  make the request to the API and then fetch it
-const url = "https://api-nba-v1.p.rapidapi.com/teams";
-
-const options = {
-  method: "GET",
-  headers: {
-    "X-RapidAPI-Key": "3d0c579fbcmshb6e1f9aff5a12d4p180a17jsn1f215555285d",
-    "X-RapidAPI-Host": "api-nba-v1.p.rapidapi.com",
-  },
-};
-
-async function getTeams(url) {
-  let response = await fetch(url, options);
-
-  if (response.ok) {
-    response = await response.json();
-    console.log(response);
-    const r = response.response;
-    console.log(r);
-    //Here the code will iterate trough each Json object to confirm if there are or not certified nba teams
-    r.forEach((nba) => {
-      if (nba.nbaFranchise === true && nba.logo != null) {
-        teamList.push(nba);
-        output(teamList);
-      }
-    });
-  }
-}
-
-getTeams(url);
-
-function reset() {
-  let articleElements = document.getElementById("teams");
-
-  articleElements.removeChild(articleElements.firstElementChild);
-}
-
-// Reference to the search bar and search button
+// Search functionality
 const searchInput = document.querySelector(".search-bar input");
 const searchButton = document.querySelector(".search-bar button");
-
-// Function to filter and display teams based on search input
-function searchTeams() {
-  const query = searchInput.value.toLowerCase(); // Get user input and convert to lowercase for case-insensitive search
-  const filteredTeams = teamList.filter(
-    (team) =>
-      team.name.toLowerCase().includes(query) || // Match team name
-      team.code.toLowerCase().includes(query) // Match team code
-  );
-
-  // Display the filtered teams
+searchButton.addEventListener("click", () => {
+  const query = searchInput.value.toLowerCase();
+  const filteredTeams = searchTeams(query);
   output(filteredTeams);
 
-  // Display a message if no teams match the search
   if (filteredTeams.length === 0) {
     document.getElementById("teams").innerHTML = "<p>No teams found.</p>";
   }
-}
+});
 
-// Event listener for the search button
-searchButton.addEventListener("click", searchTeams);
-
-// Optional: Add an event listener to trigger search when the user presses Enter in the search bar
 searchInput.addEventListener("keypress", (event) => {
   if (event.key === "Enter") {
-    searchTeams();
+    const query = searchInput.value.toLowerCase();
+    const filteredTeams = searchTeams(query);
+    output(filteredTeams);
+
+    if (filteredTeams.length === 0) {
+      document.getElementById("teams").innerHTML = "<p>No teams found.</p>";
+    }
   }
 });

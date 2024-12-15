@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../styles/site-plan.css" />
-    <script src="../script/main.js" defer></script>
+    <script type="module" src="../script/main.js"></script>
     <title>NBA stats/Home</title>
   </head>
   <body>
@@ -14,11 +14,11 @@
         <a href="index.html">
           <img src="../images/NBA-stats.png" alt="logo" class="logo-nba" />
         </a>
- 
+
         <!-- Navigation Links -->
         <a href="team-stats.html">Team Stats</a>
         <select name="theme" id="Theme">
-          <option value="">--Choose a Theme</option>
+          <option value="">Choose a Theme</option>
           <option value="dark">Dark theme</option>
           <option value="light">Light theme</option>
         </select>
@@ -47,11 +47,45 @@
     </header>
 
     <main>
+      <div id="date"></div>
       <div class="content">
         <h1>NBA is for everyone!</h1>
-        <div class="hero-container">
-          <img src="../images/in-season-tournament.jpg" />
+        <!-- Carousel -->
+        <!-- <div class="hero-container"> -->
+        <div class="carousel" data-carousel>
+          <button
+            class="carousel-button"
+            id="carousel-button-prev"
+            data-carousel-button="prev"
+          >
+            &#9756;
+          </button>
+          <button
+            class="carousel-button"
+            id="carousel-button-next"
+            data-carousel-button="next"
+          >
+            &#9758;
+          </button>
+          <ul data-slides>
+            <li class="slide" data-active>
+              <img src="../images/in-season-tournament.jpg" alt="nba-court" /> 
+                <h2>in season tournament</h2>
+                <a href="https://www.sportingnews.com/us/nba/news/season-tournament-different-courts-designs-tonight/c806095433c7f406add1ff32">Image from The Sporting News</a>
+            </li>
+            <li class="slide">
+              <img src="../images/nba-old-court.webp" alt="nba-court-2" />
+              <h2>Phenix Suns arena</h2>
+              <a href="https://www.nba.com/suns/gallery/suns-court-design-history">Image from the NBA</a>
+            </li>
+            <li class="slide">
+              <img src="../images/utah-jazz-court.webp" alt="nba-court-3" />
+              <h2>Utah Jazz</h2>
+              <a href="https://www.nba.com/news/history-nba-top-moments-1990s">Image from the NBA</a>
+            </li>
+          </ul>
         </div>
+  
         <div class="section-container">
           <section id="section1">
             <p>
@@ -81,7 +115,7 @@
             </p>
 
             <div class="img-container" id="img-section1">
-              <h2>Image title:</h2>
+              <h2>Boston Celtics vs St. Louis Hawks</h2>
               <img src="../images/nba-beginning.jpg" alt="nba-90s" />
               <p>
                 image from NBA offical website:
@@ -108,9 +142,26 @@
               talent from around the world and embracing diverse cultures. By
               blending sportsmanship, activism, and entertainment, the NBA has
               created a community that extends far beyond the court.
+              <br><br>
+              The NBA Community extends its influence through initiatives that
+              bridge cultural and geographical boundaries, fostering a global
+              sense of unity. The league hosts international games, attracting
+              fans worldwide and giving emerging markets the chance to
+              experience NBA basketball firsthand. Programs like Basketball
+              Without Borders have played a crucial role in developing talent
+              globally, nurturing players from underserved regions and helping
+              them achieve their dreams of competing at the highest level.
+              Additionally, the NBA leverages its platform to advocate for
+              important societal issues, such as racial equality, mental health
+              awareness, and environmental sustainability, empowering players
+              and fans alike to be agents of change. Through partnerships with
+              schools, charities, and grassroots organizations, the NBA
+              continues to inspire future generations, ensuring that basketball
+              remains a vehicle for social impact, personal growth, and cultural
+              exchange across the globe.
             </p>
             <div class="img-container" id="img-section2">
-              <h2>Image title:</h2>
+              <h2>NBA Comunity</h2>
               <img src="../images/nba-cares.webp" alt="nba-community" />
               <a
                 href="https://www.nba.com/news/history-top-moments-bob-pettit-hawks-1958"

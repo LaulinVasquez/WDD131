@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../styles/site-plan.css" />
-    <script src="../script/main.js" defer></script>
+    <script type="module" src="../script/main.js"></script>
     <title>NBA stats/ Team stats</title>
   </head>
   <body>
@@ -18,12 +18,13 @@
         <!-- Navigation Links -->
         <a href="team-stats.html">Team Stats</a>
         <select name="theme" id="Theme">
-          <option value="">--Choose a Theme</option>
+          <option value="">Choose a Theme</option>
           <option value="dark">Dark theme</option>
           <option value="light">Light theme</option>
         </select>
 
         <!-- Search Bar -->
+
         <div class="search-bar">
           <input type="text" placeholder="Find your team" />
           <button type="submit" aria-label="Search">
@@ -46,8 +47,9 @@
       </nav>
     </header>
     <main>
+      <div id="date"></div>
       <h1>Team stats:</h1>
-      <p>Here is where we pull all information from the API</p>
+      <p>click your team logo to know the next game!</p>
       <div class="team-content">
         <section class="container">
           <div id="teams"></div>
