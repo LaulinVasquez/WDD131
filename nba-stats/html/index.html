@@ -3,8 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Explore the history, iconic moments, and community impact of the NBA. Learn about its evolution, international influence, and commitment to social responsibility."
+    />
     <link rel="stylesheet" href="../styles/site-plan.css" />
-    <script type="module" src="../script/main.js"></script>
+    <script type="module" src="../script/main.js" defer></script>
     <title>NBA stats/Home</title>
   </head>
   <body>
@@ -17,12 +21,13 @@
 
         <!-- Navigation Links -->
         <a href="./team-stats.html">Team Stats</a>
-        <select name="theme" id="Theme">
-          <option value="">Choose a Theme</option>
-          <option value="dark">Dark theme</option>
-          <option value="light">Light theme</option>
-        </select>
-
+        <label for="theme">Theme
+          <select name="theme" id="Theme">
+            <option value="">Dark/Light</option>
+            <option value="dark">🌑</option>
+            <option value="light">💡</option>
+          </select>
+        </label>
         <!-- Search Bar -->
         <div class="search-bar">
           <input type="text" placeholder="Find your team" />
@@ -69,23 +74,31 @@
           </button>
           <ul data-slides>
             <li class="slide" data-active>
-              <img src="../images/in-season-tournament.jpg" alt="nba-court" /> 
-                <h2>in season tournament</h2>
-                <a href="https://www.sportingnews.com/us/nba/news/season-tournament-different-courts-designs-tonight/c806095433c7f406add1ff32">Image from The Sporting News</a>
+              <img src="../images/in-season-tournament.jpg" alt="nba-court" />
+              <h2>in season tournament</h2>
+              <a
+                href="https://www.sportingnews.com/us/nba/news/season-tournament-different-courts-designs-tonight/c806095433c7f406add1ff32"
+                >Image from The Sporting News</a
+              >
             </li>
             <li class="slide">
               <img src="../images/nba-old-court.webp" alt="nba-court-2" />
               <h2>Phenix Suns arena</h2>
-              <a href="https://www.nba.com/suns/gallery/suns-court-design-history">Image from the NBA</a>
+              <a
+                href="https://www.nba.com/suns/gallery/suns-court-design-history"
+                >Image from the NBA</a
+              >
             </li>
             <li class="slide">
               <img src="../images/utah-jazz-court.webp" alt="nba-court-3" />
               <h2>Utah Jazz</h2>
-              <a href="https://www.nba.com/news/history-nba-top-moments-1990s">Image from the NBA</a>
+              <a href="https://www.nba.com/news/history-nba-top-moments-1990s"
+                >Image from the NBA</a
+              >
             </li>
           </ul>
         </div>
-  
+
         <div class="section-container">
           <section id="section1">
             <p>
@@ -142,7 +155,7 @@
               talent from around the world and embracing diverse cultures. By
               blending sportsmanship, activism, and entertainment, the NBA has
               created a community that extends far beyond the court.
-              <br><br>
+              <br /><br />
               The NBA Community extends its influence through initiatives that
               bridge cultural and geographical boundaries, fostering a global
               sense of unity. The league hosts international games, attracting

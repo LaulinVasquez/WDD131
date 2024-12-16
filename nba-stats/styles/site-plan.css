@@ -460,14 +460,14 @@ select#Theme {
     padding: 15px;
   }
   .section-container {
-    display: flex; /* Enable Flexbox */
-    flex-direction: column; /* Stack sections vertically */
-    justify-content: center; /* Center vertically */
-    align-items: center; /* Center horizontally */
-    margin: 0 auto; /* Ensure it remains horizontally centered */
-    width: 90%; /* Take 90% of the page width */
-    padding: 2rem; /* Add consistent padding */
-    gap: 4rem; /* Add space between sections */
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    margin: 0 auto;
+    width: 90%; 
+    padding: 2rem; 
+    gap: 4rem; 
   }
   #section1 {
     flex-direction: row;
