@@ -45,7 +45,7 @@ export function output(teamList, containerId = "teams") {
             <img src="${team.logo}" alt="${team.name}" style="height: 30%; width: 30%">
         </a>
         <div class="details">
-            <h4>${team.nickname}</h4>
+            <h3>${team.nickname}</h3>
             <p>Code: ${team.code}</p>
             <h3>City: ${team.city}</h3>
         </div>
